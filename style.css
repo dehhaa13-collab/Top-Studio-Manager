@@ -64,6 +64,8 @@ body {
   mix-blend-mode: multiply; /* Blends the image's cream background with the page */
   pointer-events: none;
   filter: drop-shadow(0 30px 40px rgba(169, 140, 120, 0.15));
+  -webkit-mask-image: radial-gradient(circle, black 40%, transparent 70%);
+  mask-image: radial-gradient(circle, black 40%, transparent 70%);
 }
 
 .float-orb {
@@ -630,7 +632,6 @@ h1 em, h2 em, h3 em {
   min-height: 100vh;
   background-size: cover;
   background-position: center;
-  background-attachment: fixed;
   position: relative;
   display: flex;
   align-items: center;
