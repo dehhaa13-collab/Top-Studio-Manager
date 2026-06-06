@@ -998,6 +998,23 @@ h1 em, h2 em, h3 em {
   .format-section, .career-section {
     background: var(--bg-primary) !important;
   }
+  /* Career path: 2x2 grid on tablet */
+  .career-path {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem 3rem;
+    justify-items: center;
+  }
+  .path-line {
+    display: none;
+  }
+  .path-step {
+    min-width: unset;
+  }
+  /* Hide decorative ring that overlaps career steps */
+  .float-ring {
+    display: none;
+  }
 
 }
 
@@ -1039,10 +1056,13 @@ h1 em, h2 em, h3 em {
     transform: translate(-50%, -50%);
   }
   .career-path {
+    display: flex;
     flex-direction: column;
-    gap: 2rem;
+    align-items: center;
+    gap: 1rem;
   }
   .path-line {
+    display: block;
     width: 24px;
     height: 24px;
     margin: 0.5rem 0;
