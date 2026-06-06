@@ -1043,17 +1043,19 @@ h1 em, h2 em, h3 em {
     gap: 2rem;
   }
   .path-line {
-    width: 1px;
-    height: 40px;
-    margin: 10px 0;
+    width: 24px;
+    height: 24px;
+    margin: 0.5rem 0;
     top: 0;
+    background-color: transparent;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23A98C78' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0.6;
   }
   .path-line::after {
-    right: auto;
-    left: 50%;
-    top: auto;
-    bottom: -2px;
-    transform: translateX(-50%) rotate(135deg);
+    display: none;
   }
   .cta-content {
     padding: 4rem 2rem;
