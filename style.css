@@ -25,7 +25,7 @@
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   pointer-events: none;
   z-index: 0;
@@ -37,7 +37,7 @@
   padding: 0;
 }
 
-body {
+html, body {
   background-color: var(--bg-primary);
   color: var(--text-primary);
   font-family: var(--font-sans);
@@ -46,6 +46,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   position: relative;
+  width: 100%;
 }
 
 .primary-btn span {
@@ -408,6 +409,13 @@ h1 em, h2 em, h3 em {
 }
 
 /* SECTION UTILS */
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 5%;
+  width: 100%;
+}
+
 .section-title {
   font-size: clamp(2.5rem, 4vw, 4rem);
   line-height: 1.1;
@@ -937,6 +945,15 @@ h1 em, h2 em, h3 em {
 }
 
 @media (max-width: 768px) {
+  .hero, .problem-section, .format-section, .camps-editorial-section, .career-section, .cta-section {
+    padding: 4rem 0 !important;
+  }
+  .camp-glass-card {
+    padding: 2rem !important;
+  }
+  .card-inner {
+    padding: 1.5rem !important;
+  }
   .timeline::before {
     left: 2rem;
   }
