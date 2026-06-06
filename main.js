@@ -166,8 +166,9 @@ class Sparkle {
   }
 }
 
-// 60 sparkles for an elegant, uncluttered feel
-const SPARKLE_COUNT = 60;
+// Fewer sparkles on mobile for performance
+const isMobile = window.innerWidth <= 992;
+const SPARKLE_COUNT = isMobile ? 20 : 60;
 const sparkles = Array.from({ length: SPARKLE_COUNT }, () => new Sparkle(true));
 
 function animate() {

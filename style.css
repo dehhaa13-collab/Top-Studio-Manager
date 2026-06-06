@@ -29,8 +29,6 @@
   height: 100vh;
   pointer-events: none;
   z-index: 0;
-  will-change: transform;
-  transform: translateZ(0);
 }
 
 * {
@@ -174,6 +172,7 @@ h1 em, h2 em, h3 em {
   max-width: 1400px;
   margin: 0 auto;
   padding: 0 5%;
+  width: 100%;
 }
 
 /* Abstract Soft Blurs (No Noise Texture) */
@@ -346,6 +345,7 @@ h1 em, h2 em, h3 em {
 }
 
 .scroll-line {
+  display: block;
   width: 60px;
   height: 1px;
   background: var(--border-light);
@@ -419,13 +419,6 @@ h1 em, h2 em, h3 em {
 }
 
 /* SECTION UTILS */
-.container {
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 0 5%;
-  width: 100%;
-}
-
 .section-title {
   font-size: clamp(2.5rem, 4vw, 4rem);
   line-height: 1.1;
@@ -952,6 +945,20 @@ h1 em, h2 em, h3 em {
     height: 500px;
     margin-top: 4rem;
   }
+  /* Disable heavy backdrop-filter on tablet for smooth scroll */
+  .problem-section, .format-section, .camps-editorial-section, .career-section {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+  .problem-section, .camps-editorial-section {
+    background: var(--bg-secondary) !important;
+  }
+  .format-section, .career-section {
+    background: var(--bg-primary) !important;
+  }
+  section, main {
+    overflow-x: hidden;
+  }
 }
 
 @media (max-width: 768px) {
@@ -1003,6 +1010,41 @@ h1 em, h2 em, h3 em {
   }
   .cta-content {
     padding: 4rem 2rem;
+  }
+  /* Disable heavy backdrop-filter on mobile — fixes iOS scroll lag */
+  .problem-section, .format-section, .camps-editorial-section, .career-section {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    background: var(--bg-secondary) !important;
+  }
+  .format-section, .career-section {
+    background: var(--bg-primary) !important;
+  }
+  .camp-glass-card {
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+  }
+  /* Prevent any element from causing horizontal overflow */
+  section, main {
+    overflow-x: hidden;
+  }
+  .bg-blur-circle {
+    display: none;
+  }
+  .decor-3d-element {
+    display: none;
+  }
+  .watermark-text {
+    display: none;
+  }
+  .hero h1 {
+    font-size: clamp(2.5rem, 8vw, 4rem);
+  }
+  .camp-glass-card h3 {
+    font-size: 2.5rem;
+  }
+  .editorial-camp {
+    min-height: 70vh;
   }
 }
 
