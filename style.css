@@ -780,9 +780,10 @@ h1 em, h2 em, h3 em {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top: 6rem;
+  margin-top: 4rem;
   overflow-x: auto;
-  padding-bottom: 2rem;
+  padding-bottom: 3rem;
+  padding-top: 2rem;
 }
 
 .path-step {
