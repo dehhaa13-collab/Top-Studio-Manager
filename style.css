@@ -804,11 +804,23 @@ h1 em, h2 em, h3 em {
 .path-line {
   flex-grow: 1;
   height: 1px;
-  background: var(--border-light);
+  background: rgba(169, 140, 120, 0.4);
   min-width: 50px;
-  margin: 0 1rem;
+  margin: 0 1.5rem;
   position: relative;
   top: -20px;
+}
+
+.path-line::after {
+  content: '';
+  position: absolute;
+  right: -2px;
+  top: 50%;
+  transform: translateY(-50%) rotate(45deg);
+  width: 8px;
+  height: 8px;
+  border-top: 1.5px solid var(--accent);
+  border-right: 1.5px solid var(--accent);
 }
 
 /* CTA SECTION */
@@ -996,8 +1008,15 @@ h1 em, h2 em, h3 em {
   .path-line {
     width: 1px;
     height: 40px;
-    margin: 0;
+    margin: 10px 0;
     top: 0;
+  }
+  .path-line::after {
+    right: auto;
+    left: 50%;
+    top: auto;
+    bottom: -2px;
+    transform: translateX(-50%) rotate(135deg);
   }
   .cta-content {
     padding: 4rem 2rem;
